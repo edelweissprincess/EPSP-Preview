@@ -1,10 +1,8 @@
 # EPSP（EdelweissPrincessSocketProtocol)
-This is a lightweight yet secure encrypted proxy protocol designed to facilitate encrypted TCP/UDP forwarding with built-in authentication. The protocol ensures data integrity and confidentiality using AES-256 encryption, while PBKDF2-based key derivation enhances password security.
-This documentation provides an in-depth explanation of EPSP’s authentication mechanism, encryption methodology, packet structure, and operational flow.
-
+  This is a lightweight yet secure encrypted proxy protocol designed to facilitate encrypted TCP/UDP forwarding with built-in authentication. The protocol ensures data integrity and confidentiality using AES-256 encryption, while PBKDF2-based key derivation enhances password security.
+  This documentation provides an in-depth explanation of EPSP’s authentication mechanism, encryption methodology, packet structure, and operational flow.
 1. Overview
 EPSP consists of two main components:
-
 EPSP Server: Listens for client connections, authenticates requests, decrypts received packets, and forwards traffic to the intended target.
 EPSP Client: Connects to the server, sends authentication data, encrypts outgoing packets, and processes responses from the server.
 Key Features:
@@ -35,16 +33,14 @@ AUTH_STRING	16B+	AES-encrypted authentication string (b'secure_auth_key').
 Packet Creation:
 
 python
-复制
-编辑
+
 def create_auth_packet(cipher: AESCipher) -> bytes:
     encrypted_auth = cipher.encrypt(AUTH_STRING)
     return MAGIC_NUMBER + encrypted_auth
 Server-side Verification:
 
 python
-复制
-编辑
+
 def verify_auth(data: bytes, cipher: AESCipher) -> bool:
     if len(data) < 20:
         return False
