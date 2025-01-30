@@ -175,7 +175,7 @@ python epsp.py server 8888 'server_password'
 
 ### **Start the Client**  
 ```bash
-python epsp.py client 127.0.0.1 8888 'client_password'
+python epsp.py client (IP ADDR) 8888 'client_password'
 ```
 
 
