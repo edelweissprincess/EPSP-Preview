@@ -170,12 +170,12 @@ class ProxyClient:
 
 ### **Start the Server**  
 ```bash
-python proxy_protocol.py server 8888 'server_password'
+python epsp.py server 8888 'server_password'
 ```
 
 ### **Start the Client**  
 ```bash
-python proxy_protocol.py client 127.0.0.1 8888 'client_password'
+python epsp.py client 127.0.0.1 8888 'client_password'
 ```
 
 
